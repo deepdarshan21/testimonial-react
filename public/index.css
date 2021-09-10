@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+    background-color: darksalmon;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonial-section {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+}
+
+.testimonial-heading-div {
+    height: 20%;
+}
+
+.testimonial-heading {
+    text-align: center;
+    color: dodgerblue;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.testimonial {
+    /* position: relative; */
+    display: flex;
+    height: 80%;
+    width: 96%;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+.testimonial-section-2 {
+    position: relative;
+    height: 100%;
+    /* background-color: blue; */
+}
+
+.testimonial-main {
+    width: 70%;
+    background-color: white;
+}
+
+.testimonial-side {
+    /* background-color: red; */
+    width: 15%;
+    display: flex;
+}
+
+.testimonial-content {
+    background-color: greenyellow;
+    width: 94%;
+    height: 90%;
+    position: relative;
+    top: 5%;
+    left: 3%;
+    display: flex;
+}
+
+.testimonial-left {
+    /* background-image: url("https://testimonialapi.toolcarton.com/avatar/10.jpg"); */
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.testimonial-right {
+    /* background-image: url("https://testimonialapi.toolcarton.com/avatar/2.jpg"); */
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.avatar-image {
+    height: 100%;
+    width: 20%;
+    background-color: yellow;
+}
+
+.testimonial-image {
+    width: 100%;
+    /* vertical-align: -webkit-baseline-middle; */
+    height: 250px;
+    /* margin: auto 0; */
+    display: flex;
+    border-radius: 100px;
+    /* vertical-align: middle; */
+    justify-content: center;
+}
+
+.quote {
+    color: coral;
+}
+
+.message {
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    /* display: flex; */
+    width: 70%;
+    background-color: yellow;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.person-detail {
+    position: absolute;
+    bottom: 1%;
+    right: 5%;
+}
+
+.arrow {
+    /* vertical-align: middle; */
+    /* align-self: center; */
+    /* font-size: 1000px; */
+    /* text-align: center; */
+    margin: auto;
+    color: yellow;
+    size: 500px;
+}
