@@ -12,12 +12,11 @@ function Testimonial() {
     let [i, updatei] = useState(11);
     function increase() {
         updatei(i + 1);
-        console.log("clicked");
     }
     function decrease() {
         updatei(i - 1);
     }
-    const Data = () => {
+    const Data = (i) => {
         if (i >= 10) {
             i = 0;
         }
@@ -35,10 +34,13 @@ function Testimonial() {
                 <h1 className="testimonial-heading">Client Testimonials</h1>
             </div>
             <div className="testimonial">
-                {Data()}
-                <buuton className="testimonial-section-2 testimonial-side" onClick={decrease}>
-                    <Sides which="left" img={content.avatar} onClick={decrease} />
-                </buuton>
+                {Data(i)}
+                <button
+                    className="testimonial-section-2 testimonial-side"
+                    onClick={decrease}
+                >
+                    <Sides which="left" img={content.avatar} />
+                </button>
                 {/* {Data(i)} */}
                 <div className="testimonial-main testimonial-section-2">
                     <div className="testimonial-content">
@@ -53,7 +55,12 @@ function Testimonial() {
                     </div>
                 </div>
                 {/* {Data(i + 1)} */}
-                <Sides which="right" img={content.avatar} onClick={increase} />
+                <button
+                    className="testimonial-section-2 testimonial-side"
+                    onClick={increase}
+                >
+                    <Sides which="right" img={content.avatar} />
+                </button>
             </div>
         </div>
     );

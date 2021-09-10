@@ -51,6 +51,10 @@ body {
     display: flex;
 }
 
+.testimonial-side div {
+    width: 100%;
+}
+
 .testimonial-content {
     background-color: greenyellow;
     width: 94%;
