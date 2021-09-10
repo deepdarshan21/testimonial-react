@@ -9,19 +9,19 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 function Testimonial() {
     // const url = "https://testimonialapi.toolcarton.com/api";
     const [content, setContent] = useState("");
-    let [i, updatei] = useState(0);
+    let [i, updatei] = useState(11);
     function increase() {
-        // updatei(i + 1);
+        updatei(i + 1);
         console.log("clicked");
     }
     function decrease() {
         updatei(i - 11);
     }
     const Data = () => {
-        if (i === 10) {
+        if (i >= 10) {
             i = 0;
         }
-        if (i === -1) {
+        if (i <= -1) {
             i = 9;
         }
         Axios.get("https://testimonialapi.toolcarton.com/api").then((response) => {
@@ -36,18 +36,22 @@ function Testimonial() {
             </div>
             <div className="testimonial">
                 {Data()}
-                <Sides which="left" img={content.avatar} onclick={decrease} />
+                <Sides which="left" img={content.avatar} onClick={decrease} />
                 {/* {Data(i)} */}
                 <div className="testimonial-main testimonial-section-2">
                     <div className="testimonial-content">
                         <Image source={content.avatar} altNate={content.name} />
                         <FormatQuoteIcon style={{ fontSize: "400%" }} className="quote" />
-                        <Message msg={content.message} />
-                        <PersonDetail name={content.name} post={content.designation} />
+                        <Message msg={content.message} audio={content.audio} />
+                        <PersonDetail
+                            name={content.name}
+                            post={content.designation}
+                            location={content.location}
+                        />
                     </div>
                 </div>
                 {/* {Data(i + 1)} */}
-                <Sides which="right" img={content.avatar} onclick={increase} />
+                <Sides which="right" img={content.avatar} onClick={increase} />
             </div>
         </div>
     );

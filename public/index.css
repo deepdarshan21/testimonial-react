@@ -110,6 +110,21 @@ body {
     position: absolute;
     bottom: 1%;
     right: 5%;
+    /* line-height: 50%; */
+}
+
+.person-detail .name h3 {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.person-detail .designation p {
+    margin: 0;
+    font-style: italic;
+}
+
+.person-detail .location p {
+    margin: 0;
 }
 
 .arrow {

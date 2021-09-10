@@ -9,6 +9,9 @@ function PersonDetail(props) {
             <div className="designation">
                 <p>{props.post}</p>
             </div>
+            <div className="location">
+                <p>from {props.location}</p>
+            </div>
         </div>
     );
 }
