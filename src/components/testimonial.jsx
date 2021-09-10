@@ -15,7 +15,7 @@ function Testimonial() {
         console.log("clicked");
     }
     function decrease() {
-        updatei(i - 11);
+        updatei(i - 1);
     }
     const Data = () => {
         if (i >= 10) {
@@ -36,7 +36,9 @@ function Testimonial() {
             </div>
             <div className="testimonial">
                 {Data()}
-                <Sides which="left" img={content.avatar} onClick={decrease} />
+                <buuton className="testimonial-section-2 testimonial-side" onClick={decrease}>
+                    <Sides which="left" img={content.avatar} onClick={decrease} />
+                </buuton>
                 {/* {Data(i)} */}
                 <div className="testimonial-main testimonial-section-2">
                     <div className="testimonial-content">
