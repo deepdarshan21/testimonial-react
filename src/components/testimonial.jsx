@@ -9,37 +9,41 @@ import FormatQuoteIcon from "@material-ui/icons/FormatQuote";
 function Testimonial() {
     // const url = "https://testimonialapi.toolcarton.com/api";
     const [content, setContent] = useState("");
-    let [i, updatei] = useState(11);
+    const [prevContent, setPrevContent] = useState("");
+    const [nextContent, setNextContent] = useState("");
+    let [i, updatei] = useState(0);
     function increase() {
-        updatei(i + 1);
+        if (i === 9) updatei(0);
+        else updatei(i + 1);
     }
     function decrease() {
-        updatei(i - 1);
+        if (i === 0) updatei(9);
+        else updatei(i - 1);
     }
-    const Data = (i) => {
-        if (i >= 10) {
-            i = 0;
-        }
-        if (i <= -1) {
-            i = 9;
-        }
-        Axios.get("https://testimonialapi.toolcarton.com/api").then((response) => {
-            setContent(response.data[i]);
-            // console.log(content);
-        });
-    };
+    // const Data = () => {
+    Axios.get("https://testimonialapi.toolcarton.com/api").then((response) => {
+        setContent(response.data[i]);
+        if (i === 9) setNextContent(response.data[0]);
+        else setNextContent(response.data[i+1]);
+        if (i === 0) setPrevContent(response.data[9]);
+        else setPrevContent(response.data[i - 1]);
+        // console.log(content[3].name);
+    });
+    // };
+
     return (
         <div className="testimonial-section">
             <div className="testimonial-heading-div">
                 <h1 className="testimonial-heading">Client Testimonials</h1>
+                {/* <button onClick={Data}>Click</button> */}
             </div>
             <div className="testimonial">
-                {Data(i)}
+                {/* {Data(i)} */}
                 <button
                     className="testimonial-section-2 testimonial-side"
                     onClick={decrease}
                 >
-                    <Sides which="left" img={content.avatar} />
+                    <Sides which="left" img={prevContent.avatar} />
                 </button>
                 {/* {Data(i)} */}
                 <div className="testimonial-main testimonial-section-2">
@@ -59,7 +63,7 @@ function Testimonial() {
                     className="testimonial-section-2 testimonial-side"
                     onClick={increase}
                 >
-                    <Sides which="right" img={content.avatar} />
+                    <Sides which="right" img={nextContent.avatar} />
                 </button>
             </div>
         </div>
