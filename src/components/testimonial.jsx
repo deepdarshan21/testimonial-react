@@ -30,6 +30,15 @@ function Testimonial() {
         // console.log(content[3].name);
     });
     // };
+    // const Data = () => {
+    //     fetch("https://testimonialapi.toolcarton.com/api").then((response) => {
+    //         response.json();
+    //         console.log(response.json());
+    //     });
+    //     // .then((data) => {
+    //     //     console.log(data);
+    //     // });
+    // };
 
     return (
         <div className="testimonial-section">
